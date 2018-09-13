@@ -491,7 +491,7 @@ def update_npm_packages(bench_path='.'):
 	with open(os.path.join(bench_path, 'package.json'), 'w') as f:
 		f.write(json.dumps(package_json, indent=1, sort_keys=True))
 
-	exec_cmd('npm install', cwd=bench_path)
+	exec_cmd('npm install --production', cwd=bench_path)
 
 
 def install_requirements(pip, req_file):
